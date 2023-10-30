@@ -1,0 +1,16 @@
+﻿<james:DarkThemeWindow
+    x:Class="DemoApp.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:james="https://jamesnet.dev/xaml/presentation"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:units="clr-namespace:SpinnerControl.UI.Units;assembly=SpinnerControl"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Viewbox Stretch="Uniform">
+        <units:SpinnerControl />
+    </Viewbox>
+</james:DarkThemeWindow>
