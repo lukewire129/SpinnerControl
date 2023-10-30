@@ -1,0 +1,105 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:units="clr-namespace:SpinnerControl.UI.Units">
+    <Style TargetType="{x:Type units:SpinnerControl}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type units:SpinnerControl}">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="RotateSpinner11" RepeatBehavior="Forever">
+                            <DoubleAnimation
+                                Storyboard.TargetName="spinner11"
+                                Storyboard.TargetProperty="Angle"
+                                From="0"
+                                To="360"
+                                Duration="0:0:0.9" />
+                        </Storyboard>
+                        <Storyboard x:Key="RotateSpinner21" RepeatBehavior="Forever">
+                            <DoubleAnimation
+                                Storyboard.TargetName="spinner21"
+                                Storyboard.TargetProperty="Angle"
+                                From="0"
+                                To="-360"
+                                Duration="0:0:0.9" />
+                        </Storyboard>
+                        <Storyboard x:Key="RotateSpinner31" RepeatBehavior="Forever">
+                            <DoubleAnimation
+                                Storyboard.TargetName="spinner31"
+                                Storyboard.TargetProperty="Angle"
+                                From="0"
+                                To="360"
+                                Duration="0:0:0.9" />
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Ellipse
+                            Width="150"
+                            Height="150"
+                            Stroke="LimeGreen"
+                            StrokeEndLineCap="Triangle"
+                            StrokeStartLineCap="Triangle"
+                            StrokeThickness="4" />
+                        <Ellipse
+                            Width="150"
+                            Height="150"
+                            Margin="10,0,0,0"
+                            Fill="#252525">
+                            <Ellipse.RenderTransform>
+                                <RotateTransform x:Name="spinner31" CenterX="70" CenterY="70" />
+                            </Ellipse.RenderTransform>
+                            <Ellipse.Effect>
+                                <BlurEffect Radius="5" />
+                            </Ellipse.Effect>
+                        </Ellipse>
+                        <Ellipse
+                            Width="100"
+                            Height="100"
+                            Stroke="LightGoldenrodYellow"
+                            StrokeEndLineCap="Triangle"
+                            StrokeStartLineCap="Triangle"
+                            StrokeThickness="4" />
+                        <Ellipse
+                            Width="100"
+                            Height="100"
+                            Margin="0,10,0,0"
+                            Fill="#252525">
+                            <Ellipse.RenderTransform>
+                                <RotateTransform x:Name="spinner21" CenterX="45" CenterY="45" />
+                            </Ellipse.RenderTransform>
+                            <Ellipse.Effect>
+                                <BlurEffect Radius="5" />
+                            </Ellipse.Effect>
+                        </Ellipse>
+                        <Ellipse
+                            Width="50"
+                            Height="50"
+                            Stroke="OrangeRed"
+                            StrokeEndLineCap="Triangle"
+                            StrokeStartLineCap="Triangle"
+                            StrokeThickness="4" />
+                        <Ellipse
+                            Width="50"
+                            Height="50"
+                            Margin="10,0,0,0"
+                            Fill="#252525">
+                            <Ellipse.RenderTransform>
+                                <RotateTransform x:Name="spinner11" CenterX="20" CenterY="20" />
+                            </Ellipse.RenderTransform>
+                            <Ellipse.Effect>
+                                <BlurEffect Radius="5" />
+                            </Ellipse.Effect>
+                        </Ellipse>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="Window.Loaded">
+                            <BeginStoryboard Storyboard="{StaticResource RotateSpinner11}" />
+                            <BeginStoryboard Storyboard="{StaticResource RotateSpinner21}" />
+                            <BeginStoryboard Storyboard="{StaticResource RotateSpinner31}" />
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
